@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <div class="register">
+    <form action="{% url 'Register' %}" method="POST">
+        {% csrf_token %}
+
+        <center>
+            <h1>Signup</h1>
+            <p>Name : <input type="text" value="" name="Candidate_Name" placeholder="Name"></p>
+            <p>Email id : <input type="email" value="" name="Candidate_Emailid" placeholder="Email"></p>
+            <p>Password : <input type="password" value="" name="Candidate_Password" placeholder="password"></p>
+            <p>Conform Password: <input type="password" value="" name="Candidate_Conformpassword" placeholder="Conform password"></p>
+            <input type="submit" value="SignUp" name="AccountSignup"><br>
+        </center>
+    </form>
+
+<div>
+    <center>
+        <br>
+        Already have an account, <a href="{% url 'Login' %}">Login</a> here
+        <br><br>
+
+    </center>
+</div>
+
+</div>
+
+<div>
+    {% for message in messages %}
+        <h3>
+            Note : {{message}}
+        </h3>
+    {% endfor %}
+</div>
+</center>
+
+</body>
+</html>
+
+
+</body>
+</html>
